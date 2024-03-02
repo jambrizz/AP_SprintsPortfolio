@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5iotD+1KvukPrPDmX6ZoXOR05SdrWe3UcdeEFd+23RiiJxmpHIVr8DFISMYTPhJD/mq4lxqjmKixcOBJC+c51w==",
+  "dgSpecHash": "lGfzQ06PqKOrkqlBgRHGYlVOezObdbnOwyE6DGN2sG6HnkSDSqsjoDuFmF2cQzUNRpy/u0LbyY5qHg2+GbRUGg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ambri\\OneDrive\\Documents\\BYU-I\\CSE 310 Applied Programming\\repo\\Sprint1\\Inventory_Management_System\\Inventory_Management_System\\Inventory_Management_System.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ambri\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
