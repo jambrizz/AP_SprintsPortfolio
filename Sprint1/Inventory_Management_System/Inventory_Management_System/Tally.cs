@@ -15,6 +15,58 @@ namespace Inventory_Management_System
         {
             Console.ForegroundColor = ConsoleColor.Green;
             DisplyTitle();
+
+            int selection = 0;
+            bool validSelection = false;
+            while (validSelection == false)
+            {
+                MainMenu();
+                Console.WriteLine("Please select an option: ");
+                string input = Console.ReadLine();
+
+                bool isNumber = int.TryParse(input, out selection);
+                if (isNumber == false)
+                {
+                    Console.Clear();
+                    Console.WriteLine($"Invalid selection, You entered {input}. please enter a number between 1 and 6");
+                    Console.WriteLine();
+                }
+                else if (selection < 1 || selection > 6)
+                {
+                    Console.Clear();
+                    Console.WriteLine($"Invalid selection, you entered {input}. please enter a number between 1 and 6");
+                    Console.WriteLine();
+                }
+                else
+                {
+                    validSelection = true;
+                }
+            }
+
+            switch (selection)
+            {
+                case 1:
+                    Console.WriteLine("You selected option 1");
+                    break;
+                case 2:
+                    Console.WriteLine("You selected option 2");
+                    break;
+                case 3:
+                    Console.WriteLine("You selected option 3");
+                    break;
+                case 4:
+                    Console.WriteLine("You selected option 4");
+                    break;
+                case 5:
+                    Console.WriteLine("You selected option 5");
+                    break;
+                case 6:
+                    Console.WriteLine("You selected option 6");
+                    break;
+                default:
+                    Console.WriteLine("Invalid selection");
+                    break;
+            }
         }
 
         //This method displays the title of the application to the console
@@ -23,17 +75,6 @@ namespace Inventory_Management_System
             ConsoleText("Title.txt");
             Thread.Sleep(3000);
             LoadingMessage();
-            
-            int selection = 0;
-            bool validSelection = false;
-            while (validSelection == false)
-            { 
-                MainMenu();
-                Console.WriteLine("Please select an option: ");
-                string input = Console.ReadLine();
-                Console.WriteLine();
-                Console.WriteLine($"> {input}");
-            }
         }
 
         //This method displays a loading message to the console
