@@ -46,22 +46,36 @@ namespace Inventory_Management_System
             switch (selection)
             {
                 case 1:
+                    //This is to view the inventory
                     Console.WriteLine("You selected option 1");
+                    //Helper h = new Helper();
+                    //bool m = h.SaveToFile();
+                    //Console.WriteLine(m);
                     break;
                 case 2:
-                    Console.WriteLine("You selected option 2");
+                    //This is to add a new item
+                    //Console.WriteLine("You selected option 2");
+                    Add a = new Add();
+                    a.AddItem();
                     break;
                 case 3:
+                    //This is to remove an item
                     Console.WriteLine("You selected option 3");
                     break;
                 case 4:
+                    //This is to update an item
                     Console.WriteLine("You selected option 4");
                     break;
                 case 5:
+                    //This is to search for a specific item
                     Console.WriteLine("You selected option 5");
                     break;
                 case 6:
-                    Console.WriteLine("You selected option 6");
+                    //This is to exit the application
+                    Console.WriteLine("Thank you for using Tally for you inventory needs.\n");
+                    Console.WriteLine("Goodbye!");
+                    Thread.Sleep(2000);
+                    System.Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("Invalid selection");
