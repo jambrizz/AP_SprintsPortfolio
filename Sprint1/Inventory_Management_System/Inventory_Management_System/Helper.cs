@@ -12,9 +12,6 @@ namespace Inventory_Management_System
 {
     internal class Helper
     {
-        
-        //private List<string> strings = new List<string>();
-        //TODO: This method works but it overwrites the file each time a new item is added.
         public void SaveToFile(string json)
         {
             // Create a list to store the JSON objects
@@ -29,37 +26,56 @@ namespace Inventory_Management_System
                 using (StreamWriter sw = File.CreateText(path))
                 {
                     sw.WriteLine("{");
+                    sw.WriteLine("\"items\":[");
                     sw.WriteLine(json);
+                    sw.WriteLine("]");
                     sw.WriteLine("}");
                 }
             }
             else
             {
-                //TODO: fix this else statement so it starts with a bracket and ends with a bracket
-                // Add the new JSON string to the list of objects
-                jsonObjects.Add(json);
-
                 // Read existing lines from JSON file and add valid JSON objects to the list
                 foreach (string line in File.ReadAllLines(path))
                 {
-                    if (IsValidJsonObject(line))
-                    {
-                        jsonObjects.Add(line.Trim());
+                    if (line != "{" && line != "\"items\":[" && line != "]" && line != "}")
+                    { 
+                        string newLine = RemoveLastComma(line);
+                        jsonObjects.Add(newLine);
                     }
                 }
 
-                // Write the list of JSON objects back to the file, separating them with commas
-                File.WriteAllText(path, string.Join("," + Environment.NewLine, jsonObjects) + Environment.NewLine);
+                // Add the new JSON string to the list of objects
+                jsonObjects.Add(json);
+
+                //using streamwriter to write to the json file
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    sw.WriteLine("{");
+                    sw.WriteLine("\"items\":[");
+                    sw.WriteLine(string.Join("," + Environment.NewLine, jsonObjects));
+                    sw.WriteLine("]");
+                    sw.WriteLine("}");
+                }
             }
         }
 
-        // Helper method to check if a line represents a valid JSON object
-        private bool IsValidJsonObject(string input)
+        // Helper method to remove the last comma from a json object
+        private string RemoveLastComma(string input)
         {
-            input = input.Trim();
-            return (input.StartsWith("{") && input.EndsWith("}")) || // For an object
-                   (input.StartsWith("[") && input.EndsWith("]"));   // For an array
+            string newLine = "";
+            int lastChar = input.Length - 1;
+            if (input[lastChar] == ',')
+            {
+                for (int i = 0; i < input.Length - 1; i++)
+                {
+                    newLine += input[i];
+                }
+            }
+            else
+            {
+                newLine = input;
+            }
+            return newLine;
         }
-        
     }
 }

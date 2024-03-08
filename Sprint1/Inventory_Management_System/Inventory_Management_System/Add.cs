@@ -45,7 +45,7 @@ namespace Inventory_Management_System
 
             //This is to convert the item to a json string
             var json = JsonConvert.SerializeObject(newItem);
-            Console.WriteLine(json);
+            //Console.WriteLine(json);
             Helper h = new Helper();
             h.SaveToFile(json);
         }
