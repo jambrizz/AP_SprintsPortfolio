@@ -48,9 +48,8 @@ namespace Inventory_Management_System
                 case 1:
                     //This is to view the inventory
                     Console.WriteLine("You selected option 1");
-                    //Helper h = new Helper();
-                    //bool m = h.SaveToFile();
-                    //Console.WriteLine(m);
+                    Helper h = new Helper();
+                    h.DisplayAllItems();
                     break;
                 case 2:
                     //This is to add a new item

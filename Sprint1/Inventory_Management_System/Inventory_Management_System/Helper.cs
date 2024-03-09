@@ -12,12 +12,29 @@ namespace Inventory_Management_System
 {
     internal class Helper
     {
+        protected string root = "C:\\Users\\ambri\\OneDrive\\Documents\\BYU-I\\CSE 310 Applied Programming\\repo\\Sprint1\\Inventory_Management_System\\Inventory_Management_System\\";
+        protected string FileName = "Inventory.json";
+        public void DisplayAllItems()
+        {
+            string path = root + FileName;
+            foreach (string line in File.ReadAllLines(path))
+            {
+               string newLine = RemoveJSONSyntax(line);
+               
+               if(newLine != null)
+               {
+                    Console.WriteLine(newLine);
+                    Console.WriteLine();
+               }
+            }
+        }
+
         public void SaveToFile(string json)
         {
             // Create a list to store the JSON objects
             List<string> jsonObjects = new List<string>();
-            string root = "C:\\Users\\ambri\\OneDrive\\Documents\\BYU-I\\CSE 310 Applied Programming\\repo\\Sprint1\\Inventory_Management_System\\Inventory_Management_System\\";
-            string FileName = "Inventory.json";
+            //string root = "C:\\Users\\ambri\\OneDrive\\Documents\\BYU-I\\CSE 310 Applied Programming\\repo\\Sprint1\\Inventory_Management_System\\Inventory_Management_System\\";
+            //string FileName = "Inventory.json";
             string path = root + FileName;
 
             if (!File.Exists(path))
@@ -74,6 +91,23 @@ namespace Inventory_Management_System
             else
             {
                 newLine = input;
+            }
+            return newLine;
+        }
+
+        // Helper method to remove the JSON syntax from a line and return a string
+        private string RemoveJSONSyntax(string line)
+        { 
+            string newLine = "";
+            if (line != "{" && line != "\"items\":[" && line != "]" && line != "}")
+            {
+                for (int i = 0; i < line.Length; i++)
+                {
+                    if (line[i] != '{' && line[i] != '}' && line[i] != '[' && line[i] != ']' && line[i] != '\"')
+                    {
+                        newLine += line[i];
+                    }
+                }
             }
             return newLine;
         }
