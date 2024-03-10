@@ -45,32 +45,9 @@ namespace Inventory_Management_System
 
             //This is to convert the item to a json string
             var json = JsonConvert.SerializeObject(newItem);
-            //Console.WriteLine(json);
             Helper h = new Helper();
             h.SaveToFile(json);
         }
-
-        /*
-        private void SaveItemToJson()
-        {
-            Item newItem = new Item
-            {
-                Id = ItemId,
-                Name = ItemName,
-                Description = ItemDescription,
-                Price = ItemPrice,
-                Quantity = ItemQuantity
-            };
-
-            string json = JsonConvert.SerializeObject(newItem);
-            string path = @"C:\Users\Public\Inventory.json";
-            if (!File.Exists(path))
-            {
-                File.Create(path);
-            }
-            File.WriteAllText(path, json);
-        }
-        */
     }
 
     public class Item

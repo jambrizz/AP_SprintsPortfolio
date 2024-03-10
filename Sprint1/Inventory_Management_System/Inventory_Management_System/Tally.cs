@@ -47,30 +47,44 @@ namespace Inventory_Management_System
             {
                 case 1:
                     //This is to view the inventory
-                    Console.WriteLine("You selected option 1");
+                    Console.Clear();
                     Helper h = new Helper();
                     h.DisplayAllItems();
                     break;
                 case 2:
                     //This is to add a new item
-                    //Console.WriteLine("You selected option 2");
+                    Console.Clear();
                     Add a = new Add();
                     a.AddItem();
                     break;
                 case 3:
                     //This is to remove an item
-                    Console.WriteLine("You selected option 3");
+                    Console.Clear();
+                    Remove r = new Remove();
+                    r.RemoveItem();
+                    Console.WriteLine();
+                    Console.Write("Select the Item to delete: ");
+                    int itemToDelete = Convert.ToInt32(Console.ReadLine());
+                    Helper h2 = new Helper();
+                    h2.RemoveJSONObj(itemToDelete);
                     break;
                 case 4:
                     //This is to update an item
-                    Console.WriteLine("You selected option 4");
+                    Console.Clear();                    
+                    Helper h3 = new Helper();
+                    h3.DisplayItemToSelect();
+                    Console.WriteLine();
+                    Console.Write("Select an item to update: ");
+                    int itemToUpdate = Convert.ToInt32(Console.ReadLine());
+                    string line = h3.GetJSONObj(itemToUpdate);
+                    Console.WriteLine(line);
+                    /********************************************************************/
+                    //TODO: Add code to update the item
+                    /********************************************************************/
                     break;
                 case 5:
                     //This is to search for a specific item
-                    Console.WriteLine("You selected option 5");
-                    break;
-                case 6:
-                    //This is to exit the application
+                    Console.Clear();
                     Console.WriteLine("Thank you for using Tally for you inventory needs.\n");
                     Console.WriteLine("Goodbye!");
                     Thread.Sleep(2000);

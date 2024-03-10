@@ -9,5 +9,10 @@ namespace Inventory_Management_System
 {
     internal class Remove
     {
+        public void RemoveItem()
+        { 
+            Helper h = new Helper();
+            h.DisplayItemToSelect();
+        }
     }
 }

@@ -14,6 +14,9 @@ namespace Inventory_Management_System
     {
         protected string root = "C:\\Users\\ambri\\OneDrive\\Documents\\BYU-I\\CSE 310 Applied Programming\\repo\\Sprint1\\Inventory_Management_System\\Inventory_Management_System\\";
         protected string FileName = "Inventory.json";
+        protected List<string> jsonObjects = new List<string>();
+
+        // Method to display all items in the JSON file
         public void DisplayAllItems()
         {
             string path = root + FileName;
@@ -29,12 +32,86 @@ namespace Inventory_Management_System
             }
         }
 
-        public void SaveToFile(string json)
+        // Method to display all items in the JSON file to a List and each item is numbered and displayed to the console
+        public void DisplayItemToSelect()
+        { 
+            string path = root + FileName;
+            int count = 1;
+            
+            AddJSONObjectsToList();
+
+            foreach (string item in jsonObjects)
+            {
+                Console.WriteLine(count + ". " + item);
+                count++;
+            }
+
+        }
+
+        // Method to add all valid JSON objects to a list
+        private void AddJSONObjectsToList()
         {
-            // Create a list to store the JSON objects
-            List<string> jsonObjects = new List<string>();
-            //string root = "C:\\Users\\ambri\\OneDrive\\Documents\\BYU-I\\CSE 310 Applied Programming\\repo\\Sprint1\\Inventory_Management_System\\Inventory_Management_System\\";
-            //string FileName = "Inventory.json";
+            string path = root + FileName;
+            foreach (string line in File.ReadAllLines(path))
+            {
+                string item = IsThisAJSONObj(line);
+
+                if (item != null)
+                {
+                    jsonObjects.Add(item);
+                }
+            }
+        }
+
+        // Method to remove a JSON object from the JSON file
+        public void RemoveJSONObj(int selection)
+        { 
+            AddJSONObjectsToList();
+            
+            int selectionIndex = selection - 1;
+            jsonObjects.RemoveAt(selectionIndex);
+
+            WriteListToFile();
+        }
+
+        // Method is to return a JSON object from the JSON file
+        public string GetJSONObj(int selection)
+        {
+            string line = "";
+            AddJSONObjectsToList();
+            int selectionIndex = selection - 1;
+            line = jsonObjects[selectionIndex];
+            return line;
+        }
+
+        // TODO: Finish this Method
+        public void UpdateJSONObj(int selection, string json)
+        {
+            /*
+            AddJSONObjectsToList();
+            int selectionIndex = selection - 1;
+            jsonObjects[selectionIndex] = json;
+            WriteListToFile();
+            */
+        }
+
+        // Method to write the list of JSON objects to a JSON file
+        private void WriteListToFile()
+        {
+            string path = root + FileName;
+            using (StreamWriter sw = File.CreateText(path))
+            {
+                sw.WriteLine("{");
+                sw.WriteLine("\"items\":[");
+                sw.WriteLine(string.Join("," + Environment.NewLine, jsonObjects));
+                sw.WriteLine("]");
+                sw.WriteLine("}");
+            }
+        }
+
+        // Method to save an item JSON string to a JSONfile
+        public void SaveToFile(string json)
+        {            
             string path = root + FileName;
 
             if (!File.Exists(path))
@@ -111,5 +188,22 @@ namespace Inventory_Management_System
             }
             return newLine;
         }
+
+        // Helper method to add a JSON object to a list of JSON objects
+        private string IsThisAJSONObj(string line)
+        {
+            string newLine = "";
+            if (line != "{" && line != "\"items\":[" && line != "]" && line != "}")
+            {
+                newLine = RemoveLastComma(line);
+            }
+            else
+            { 
+                newLine = null;
+            }
+
+            return newLine;
+        }
+
     }
 }
