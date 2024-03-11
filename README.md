@@ -4,6 +4,8 @@ Engineer or an internship.
 
 ## Projects
 
+***
+
 ### Hello World project
 This is a simple console app that prints "Hello, World!" to the console. It is written in C# and there are short pauses between console write statements.
 
@@ -29,6 +31,8 @@ This is a simple console app that prints "Hello, World!" to the console. It is w
 
 [Youtube Video Demonstration](https://youtu.be/Isw6V0in9uk)
 
+***
+
 ### Inventory Management System
 This is a simple inventory management system that allows users to add, update, delete and view items in the inventory. It is written in C# and uses a console interface.
 
@@ -38,7 +42,7 @@ This is a simple inventory management system that allows users to add, update, d
 
 | Date Created | Last Updated |
 | ------------ | ------------ |
-| 2024-02-xx   | 2024-xx-xx   |
+| 2024-02-25   | 2024-03-10   |
 
 |Technologies     |
 |-----------------|
@@ -47,5 +51,12 @@ This is a simple inventory management system that allows users to add, update, d
 |Git              |
 |GitHub           |
 
-[Youtube Video Demonstration]()
+| Website References |
+| ------------------- |
+| [W3 Schools](https://www.w3schools.com/cs/index.php) |
+| [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/) |
+| [Learn to Serialize JSON in C#](https://www.youtube.com/watch?v=pJtuuolUhCc) |
+| [NewtonSoft](https://www.newtonsoft.com/json/help/html/SerializingJSON.htm) |
+
+[Youtube Video Demonstration](https://youtu.be/F1bV9numLV8)
 
