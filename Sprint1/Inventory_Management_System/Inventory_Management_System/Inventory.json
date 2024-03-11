@@ -1,10 +1,9 @@
 {
 "items":[
-{"Id":"1","Name":"toothbrush","Description":"a hand tool used to clean teeth.","Price":4.96,"Quantity":5,"DateAdded":"2024-03-07T23:59:22.3444997-08:00"},
 {"Id":"2","Name":"floss","Description":"a dispensor of string used to clean in between teeth.","Price":0.89,"Quantity":5,"DateAdded":"2024-03-08T00:14:58.5283717-08:00"},
 {"Id":"3","Name":"mouthwash","Description":"a liquid that is used to disinfect a mouth.","Price":8.96,"Quantity":5,"DateAdded":"2024-03-08T00:28:55.0484185-08:00"},
 {"Id":"4","Name":"toothpaste","Description":"a paste used to clean teeth.","Price":5.01,"Quantity":6,"DateAdded":"2024-03-08T00:56:13.2398749-08:00"},
 {"Id":"5","Name":"teeth whittening strips","Description":"plastic strip that are place on your teeth to make them whitter.","Price":32.81,"Quantity":6,"DateAdded":"2024-03-08T01:08:04.559818-08:00"},
-{"Id":"6","Name":"Electric Toothbrush","Description":"An electric powered tool used to clean teeth.","Price":14.88,"Quantity":5,"DateAdded":"2024-03-09T19:55:37.6016954-08:00"}
+{"Id":"6","Name":"Electric Toothbrush","Description":"An electric powered toothbrush used to clean teeth.","Price":17.88,"Quantity":5,"DateAdded":"2024-03-10T21:31:15.5202816-07:00"}
 ]
 }

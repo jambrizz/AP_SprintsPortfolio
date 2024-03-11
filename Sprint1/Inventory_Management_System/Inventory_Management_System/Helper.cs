@@ -42,10 +42,16 @@ namespace Inventory_Management_System
 
             foreach (string item in jsonObjects)
             {
-                Console.WriteLine(count + ". " + item);
+                string newLine = RemoveJSONSyntax(item);
+                Console.WriteLine(count + ". " + newLine);
                 count++;
             }
+            ClearList();
+        }
 
+        public void ClearList()
+        {
+            jsonObjects.Clear();
         }
 
         // Method to add all valid JSON objects to a list
@@ -81,18 +87,8 @@ namespace Inventory_Management_System
             AddJSONObjectsToList();
             int selectionIndex = selection - 1;
             line = jsonObjects[selectionIndex];
+            ClearList();
             return line;
-        }
-
-        // TODO: Finish this Method
-        public void UpdateJSONObj(int selection, string json)
-        {
-            /*
-            AddJSONObjectsToList();
-            int selectionIndex = selection - 1;
-            jsonObjects[selectionIndex] = json;
-            WriteListToFile();
-            */
         }
 
         // Method to write the list of JSON objects to a JSON file

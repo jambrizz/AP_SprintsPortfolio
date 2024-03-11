@@ -17,9 +17,10 @@ namespace Inventory_Management_System
             DisplyTitle();
 
             int selection = 0;
-            bool validSelection = false;
-            while (validSelection == false)
+            bool runProgram = true;
+            while (runProgram == true)
             {
+                Console.Clear();
                 MainMenu();
                 Console.WriteLine("Please select an option: ");
                 string input = Console.ReadLine();
@@ -39,61 +40,63 @@ namespace Inventory_Management_System
                 }
                 else
                 {
-                    validSelection = true;
+                    switch (selection)
+                    {
+                        case 1:
+                            //This is to view the inventory
+                            Console.Clear();
+                            Helper h = new Helper();
+                            h.DisplayAllItems();
+                            Console.Write("Press any key to continue: ");
+                            Console.ReadKey();
+                            break;
+                        case 2:
+                            //This is to add a new item
+                            Console.Clear();
+                            Add a = new Add();
+                            a.AddItem();
+                            break;
+                        case 3:
+                            //This is to remove an item
+                            Console.Clear();
+                            Remove r = new Remove();
+                            r.RemoveItem();
+                            Console.WriteLine();
+                            Console.Write("Select the Item to delete: ");
+                            int itemToDelete = Convert.ToInt32(Console.ReadLine());
+                            Helper h2 = new Helper();
+                            h2.RemoveJSONObj(itemToDelete);
+                            break;
+                        case 4:
+                            //This is to update an item
+                            Console.Clear();
+                            Helper h3 = new Helper();
+                            h3.DisplayItemToSelect();
+                            Console.WriteLine();
+                            Console.Write("Select an item to update: ");
+                            int itemToUpdate = Convert.ToInt32(Console.ReadLine());
+                            string line = h3.GetJSONObj(itemToUpdate);
+                            h3.RemoveJSONObj(itemToUpdate);
+                            Add a2 = new Add();
+                            a2.UpdateItem(line);
+                            break;
+                        case 5:
+                            //This is to search for a specific item
+                            Console.Clear();
+                            runProgram= false;
+                            Console.WriteLine("Thank you for using Tally for you inventory needs.\n");
+                            Console.WriteLine("Goodbye!");
+                            Thread.Sleep(2000);
+                            System.Environment.Exit(0);
+                            break;
+                        default:
+                            Console.WriteLine("Invalid selection");
+                            break;
+                    }
                 }
             }
 
-            switch (selection)
-            {
-                case 1:
-                    //This is to view the inventory
-                    Console.Clear();
-                    Helper h = new Helper();
-                    h.DisplayAllItems();
-                    break;
-                case 2:
-                    //This is to add a new item
-                    Console.Clear();
-                    Add a = new Add();
-                    a.AddItem();
-                    break;
-                case 3:
-                    //This is to remove an item
-                    Console.Clear();
-                    Remove r = new Remove();
-                    r.RemoveItem();
-                    Console.WriteLine();
-                    Console.Write("Select the Item to delete: ");
-                    int itemToDelete = Convert.ToInt32(Console.ReadLine());
-                    Helper h2 = new Helper();
-                    h2.RemoveJSONObj(itemToDelete);
-                    break;
-                case 4:
-                    //This is to update an item
-                    Console.Clear();                    
-                    Helper h3 = new Helper();
-                    h3.DisplayItemToSelect();
-                    Console.WriteLine();
-                    Console.Write("Select an item to update: ");
-                    int itemToUpdate = Convert.ToInt32(Console.ReadLine());
-                    string line = h3.GetJSONObj(itemToUpdate);
-                    Console.WriteLine(line);
-                    /********************************************************************/
-                    //TODO: Add code to update the item
-                    /********************************************************************/
-                    break;
-                case 5:
-                    //This is to search for a specific item
-                    Console.Clear();
-                    Console.WriteLine("Thank you for using Tally for you inventory needs.\n");
-                    Console.WriteLine("Goodbye!");
-                    Thread.Sleep(2000);
-                    System.Environment.Exit(0);
-                    break;
-                default:
-                    Console.WriteLine("Invalid selection");
-                    break;
-            }
+            
         }
 
         //This method displays the title of the application to the console
