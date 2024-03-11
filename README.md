@@ -58,5 +58,5 @@ This is a simple inventory management system that allows users to add, update, d
 | [Learn to Serialize JSON in C#](https://www.youtube.com/watch?v=pJtuuolUhCc) |
 | [NewtonSoft](https://www.newtonsoft.com/json/help/html/SerializingJSON.htm) |
 
-[Youtube Video Demonstration](https://youtu.be/F1bV9numLV8)
+[Youtube Video Demonstration](https://youtu.be/GHsohyT3z6M)
 
