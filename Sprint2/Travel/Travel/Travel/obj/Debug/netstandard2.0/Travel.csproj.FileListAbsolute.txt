@@ -5,7 +5,6 @@ C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2
 C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\Travel.csproj.AssemblyReference.cache
 C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\Travel.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\App.xaml.g.cs
-C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\Travel.AssemblyInfoInputs.cache
 C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\Travel.AssemblyInfo.cs
 C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\Travel.csproj.CoreCompileInputs.cache
@@ -14,3 +13,4 @@ C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2
 C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\Travel.dll
 C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\refint\Travel.dll
 C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\Travel.pdb
+C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\MainPage.xaml.g.cs

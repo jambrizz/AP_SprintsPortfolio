@@ -14,5 +14,23 @@ namespace Travel
         {
             InitializeComponent();
         }
+        
+        void OnButtonClicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Alert", "Button was clicked", "OK");
+        }
+
+        void NewItenary(object sender, EventArgs e)
+        {
+            //Navigation.PushAsync(new NewItenary());
+            //DisplayAlert("Alert", "Button was clicked", "OK");
+        }
+
+        void LoadItenary(object sender, EventArgs e)
+        {
+            //Navigation.PushAsync(new LoadItenary());
+            DisplayAlert("Alert", "Button was clicked", "OK");
+        }
+
     }
 }
