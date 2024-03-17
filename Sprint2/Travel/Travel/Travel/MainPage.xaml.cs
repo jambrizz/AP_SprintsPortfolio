@@ -22,14 +22,14 @@ namespace Travel
 
         void NewItenary(object sender, EventArgs e)
         {
-            //Navigation.PushAsync(new NewItenary());
-            //DisplayAlert("Alert", "Button was clicked", "OK");
+            DisplayAlert("Alert", "Create new itenary", "OK");
+            //Navigation.PushAsync(new Page);
         }
 
         void LoadItenary(object sender, EventArgs e)
         {
             //Navigation.PushAsync(new LoadItenary());
-            DisplayAlert("Alert", "Button was clicked", "OK");
+            DisplayAlert("Alert", "Load an itenary", "OK");
         }
 
     }
