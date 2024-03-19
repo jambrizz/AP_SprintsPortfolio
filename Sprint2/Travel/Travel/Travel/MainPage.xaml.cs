@@ -20,10 +20,9 @@ namespace Travel
             DisplayAlert("Alert", "Button was clicked", "OK");
         }
 
-        void NewItenary(object sender, EventArgs e)
+        async  void NewItenary(object sender, EventArgs e)
         {
-            DisplayAlert("Alert", "Create new itenary", "OK");
-            //Navigation.PushAsync(new Page);
+            await Navigation.PushModalAsync(new Views.Add());
         }
 
         void LoadItenary(object sender, EventArgs e)

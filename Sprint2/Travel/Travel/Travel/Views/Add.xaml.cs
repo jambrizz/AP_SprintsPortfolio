@@ -15,6 +15,7 @@ namespace Travel.Views
         public Add()
         {
             InitializeComponent();
+            //BindingContext = new ViewModels.AddViewModel();
         }
     }
 }

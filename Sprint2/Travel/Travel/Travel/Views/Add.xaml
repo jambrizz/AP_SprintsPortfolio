@@ -11,21 +11,33 @@
         </StackLayout>
     </ContentPage.Content>-->
     <StackLayout Margin="20">
-        <Editor Placeholder="Enter name of Event"
-                Text="{Binding Text}"
-                HeightRequest="100"/>
-        <Editor Placeholder="Enter description of Event"
-                Text="{Binding Text}"
-                HeightRequest="100"/>
+        <Label Text="Event Name"
+                FontSize="Large"
+                HorizontalOptions="Center"/>
+        <Editor Placeholder="Enter name of Event here"
+                Text="{Binding Title}"
+                HeightRequest="50"/>
+        <Label Text="Event Description"
+               FontSize="Large"
+               HorizontalOptions="Center"/>
+        <Editor Placeholder="Enter description of Event here"
+                Text="{Binding Description}"
+                HeightRequest="50"/>
+        <Label Text="Date of Event"/>
         <DatePicker Date="{Binding Date}"/>
-        <TimePicker Time="{Binding Time}"/>
+        <Label Text="Start Time"/>
+        <TimePicker Time="{Binding StartTime}"/>
+        <Label Text="End Time"/>
+        <TimePicker Time="{Binding EndTime}"/>
         <Grid ColumnDefinitions="*,*">
             <Button Text="Save"
                     Command="{Binding SaveCommand}"
-                    Grid.Column="0"/>
+                    Grid.Column="0"
+                    CornerRadius="20"/>
             <Button Text="Cancel"
                     Command="{Binding CancelCommand}"
-                    Grid.Column="1"/>
+                    Grid.Column="1"
+                    CornerRadius="20"/>
         </Grid>
     </StackLayout>
 </ContentPage>
