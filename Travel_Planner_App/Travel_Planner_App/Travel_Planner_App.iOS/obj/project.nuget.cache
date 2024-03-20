@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "IRsDlgrNc80YN+Oq1a2NJJJf3+FlmTdWY96O59EttlETy4TyRtM/4X6ymJV7PttfRKcpyPE1QMe/sQ3O4F3ICw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ambri\\OneDrive\\Documents\\BYU-I\\CSE 310 Applied Programming\\repo\\Travel_Planner_App\\Travel_Planner_App\\Travel_Planner_App.iOS\\Travel_Planner_App.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ambri\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\ambri\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\ambri\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}

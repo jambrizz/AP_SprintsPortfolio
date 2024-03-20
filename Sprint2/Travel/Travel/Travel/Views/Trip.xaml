@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Travel.Views.Trip"
+             Title="Create New Trip">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Trip Name" 
+                   FontSize="Large"
+                   HorizontalOptions="Center"/>
+            <Editor Placeholder="Enter name here"
+                    FontSize="Medium"
+                    Text="{Binding Name}"
+                    x:Name="TripName"
+                    HorizontalOptions="Center"
+                    WidthRequest="300"/>
+            <Label Text="Start Date"
+                   FontSize="Large"
+                   HorizontalOptions="Center"/>
+            <DatePicker Date="{Binding StartDate}"
+                        x:Name="StartDate"
+                        HorizontalOptions="Center"
+                        WidthRequest="300"/>
+            <Label Text="End Date"
+                   FontSize="Large"
+                   HorizontalOptions="Center"/>
+            <DatePicker Date="{Binding EndDate}"
+                        x:Name="EndDate"
+                        HorizontalOptions="Center"
+                        WidthRequest="300"/>
+            
+            <!-- Continue with the code here -->
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

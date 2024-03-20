@@ -20,6 +20,11 @@ namespace Travel
             DisplayAlert("Alert", "Button was clicked", "OK");
         }
 
+        async void NewTrip(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new Views.Trip());
+        }
+
         async  void NewItenary(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new Views.Add());
