@@ -1,11 +1,16 @@
 ﻿using System;
+using System.IO;
+using Travel.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Travel.Models;
 
 namespace Travel
 {
     public partial class App : Application
     {
+        static TravelDatabase database;
+        
         public App()
         {
             InitializeComponent();
@@ -13,6 +18,18 @@ namespace Travel
             MainPage = new MainPage();
         }
 
+        //TODO: Fix the Database property to return the database instance.
+        public static TravelDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new TravelDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TravelPlans.db3"));
+                }
+                return database;
+            }
+        }
         protected override void OnStart()
         {
         }

@@ -16,3 +16,5 @@ C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2
 C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\Views\Add.xaml.g.cs
 C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\Views\Trip.xaml.g.cs
+C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+C:\Users\ambri\OneDrive\Documents\BYU-I\CSE 310 Applied Programming\repo\Sprint2\Travel\Travel\Travel\obj\Debug\netstandard2.0\Views\Itenaries.xaml.g.cs

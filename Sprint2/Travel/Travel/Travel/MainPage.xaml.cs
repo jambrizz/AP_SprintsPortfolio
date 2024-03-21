@@ -30,10 +30,9 @@ namespace Travel
             await Navigation.PushModalAsync(new Views.Add());
         }
 
-        void LoadItenary(object sender, EventArgs e)
+        async void LoadItenary(object sender, EventArgs e)
         {
-            //Navigation.PushAsync(new LoadItenary());
-            DisplayAlert("Alert", "Load an itenary", "OK");
+            await Navigation.PushModalAsync(new Views.Itenaries());
         }
 
     }
