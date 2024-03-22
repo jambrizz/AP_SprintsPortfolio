@@ -10,7 +10,7 @@
                    HorizontalOptions="Center"/>
             <Editor Placeholder="Enter name here"
                     FontSize="Medium"
-                    Text="{Binding Name}"
+                    Text="{Binding TripName}"
                     x:Name="TripName"
                     HorizontalOptions="Center"
                     WidthRequest="300"/>
@@ -28,10 +28,16 @@
                         x:Name="EndDate"
                         HorizontalOptions="Center"
                         WidthRequest="300"/>
-            
-            <!-- Continue with the code here -->
-            
-            
+            <Grid ColumnDefinitions="*,*">
+                <Button Text="Save"
+                        Clicked="SaveTrip"
+                        Grid.Column="0"
+                        CornerRadius="20"/>
+                <Button Text="Cancel"
+                        Clicked="CancelEntry"
+                        Grid.Column="0"
+                        CornerRadius="20"/>
+            </Grid>          
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -7,7 +7,7 @@ using Travel.Models;
 
 namespace Travel.Data
 {
-    class TravelDatabase
+    public class TravelDatabase
     {
         readonly SQLiteAsyncConnection database;
 

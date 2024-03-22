@@ -14,12 +14,6 @@ namespace Travel
         {
             InitializeComponent();
         }
-        
-        void OnButtonClicked(object sender, EventArgs e)
-        {
-            DisplayAlert("Alert", "Button was clicked", "OK");
-        }
-
         async void NewTrip(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new Views.Trip());

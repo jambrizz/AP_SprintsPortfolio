@@ -5,7 +5,7 @@ using SQLite;
 
 namespace Travel.Models
 {
-    internal class ItenaryItem
+    public class ItenaryItem
     {
         [PrimaryKey, AutoIncrement]
         public int ItenaryItemID { get; set; }

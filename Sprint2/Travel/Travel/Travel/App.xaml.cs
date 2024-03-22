@@ -11,14 +11,6 @@ namespace Travel
     {
         static TravelDatabase database;
         
-        public App()
-        {
-            InitializeComponent();
-
-            MainPage = new MainPage();
-        }
-
-        //TODO: Fix the Database property to return the database instance.
         public static TravelDatabase Database
         {
             get
@@ -30,6 +22,14 @@ namespace Travel
                 return database;
             }
         }
+
+        public App()
+        {
+            InitializeComponent();
+
+            MainPage = new MainPage();
+        }
+
         protected override void OnStart()
         {
         }
