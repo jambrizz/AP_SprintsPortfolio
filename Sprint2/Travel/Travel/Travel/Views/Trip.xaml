@@ -10,22 +10,20 @@
                    HorizontalOptions="Center"/>
             <Editor Placeholder="Enter name here"
                     FontSize="Medium"
-                    Text="{Binding TripName}"
+                    Text=""
                     x:Name="TripName"
                     HorizontalOptions="Center"
                     WidthRequest="300"/>
             <Label Text="Start Date"
                    FontSize="Large"
                    HorizontalOptions="Center"/>
-            <DatePicker Date="{Binding StartDate}"
-                        x:Name="StartDate"
+            <DatePicker x:Name="startDate"
                         HorizontalOptions="Center"
                         WidthRequest="300"/>
             <Label Text="End Date"
                    FontSize="Large"
                    HorizontalOptions="Center"/>
-            <DatePicker Date="{Binding EndDate}"
-                        x:Name="EndDate"
+            <DatePicker x:Name="endDate"
                         HorizontalOptions="Center"
                         WidthRequest="300"/>
             <Grid ColumnDefinitions="*,*">
@@ -33,10 +31,7 @@
                         Clicked="SaveTrip"
                         Grid.Column="0"
                         CornerRadius="20"/>
-                <Button Text="Cancel"
-                        Clicked="CancelEntry"
-                        Grid.Column="0"
-                        CornerRadius="20"/>
+                
             </Grid>          
         </StackLayout>
     </ContentPage.Content>

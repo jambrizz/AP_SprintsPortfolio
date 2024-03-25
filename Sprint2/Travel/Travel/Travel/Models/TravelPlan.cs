@@ -13,6 +13,10 @@ namespace Travel.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-        
+       
+        public async void AddTravelPlan(TravelPlan travelPlan)
+        {
+            await App.Database.SaveTravelPlanAsync(travelPlan);
+        }
     }
 }

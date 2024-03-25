@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Travel.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Trip : ContentPage
 	{
 		public Trip ()
@@ -19,20 +14,46 @@ namespace Travel.Views
 
 		private async void SaveTrip(object sender, EventArgs e)
 		{
+			Title = TripName.Text;
+			string StartDate = startDate.Date.ToShortDateString();
+			string EndDate = endDate.Date.ToShortDateString();
+
 			var trip = (Models.TravelPlan)BindingContext;
 			if (!string.IsNullOrEmpty(trip.Title))
 			{
+				//TODO: Add trip to database
+
                 //Models.TravelPlan.AddTravelPlan(trip);
-                //this.Navigation.PopAsync();
-				await App.Database.SaveTravelPlanAsync(trip);
-            }
+			}
 			else
 			{
                 await DisplayAlert("Error", "Please enter a title.", "OK");
             }
 
 			await Shell.Current.GoToAsync("..");
+
+
+            //DatePicker StartDate = startDate;
+			//DatePicker EndDate = endDate;
+            //await DisplayAlert("Success", $"{Title}, {StartDate}, {EndDate}", "OK");
+
+
 			/*
+			var trip = (Models.TravelPlan)BindingContext;
+			if (!string.IsNullOrEmpty(trip.Title))
+			{
+				//Models.TravelPlan.AddTravelPlan(trip);
+				//this.Navigation.PopAsync();
+				await DisplayAlert($"{TripName}");
+				//await App.Database.SaveTravelPlanAsync(trip);
+			}
+			else
+			{
+                await DisplayAlert("Error", "Please enter a title.", "OK");
+            }
+
+			await Shell.Current.GoToAsync("..");
+			
             Models.TravelPlan travelPlan = new Models.TravelPlan()
 			{
                 Title = TripName.Text,
