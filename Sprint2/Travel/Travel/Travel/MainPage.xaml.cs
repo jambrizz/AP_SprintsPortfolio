@@ -13,6 +13,7 @@ namespace Travel
         public MainPage()
         {
             InitializeComponent();
+            //Routing.RegisterRoute("trip", typeof(Views.Trip));
         }
         async void NewTrip(object sender, EventArgs e)
         {

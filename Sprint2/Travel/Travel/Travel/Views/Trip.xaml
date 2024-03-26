@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Travel.Views.Trip"
-             Title="Create New Trip">
+             Title="Create New Trip"
+             x:Name="tripPage">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Trip Name" 
@@ -10,7 +11,7 @@
                    HorizontalOptions="Center"/>
             <Editor Placeholder="Enter name here"
                     FontSize="Medium"
-                    Text=""
+                    Text="{Binding Title}"
                     x:Name="TripName"
                     HorizontalOptions="Center"
                     WidthRequest="300"/>
@@ -18,12 +19,15 @@
                    FontSize="Large"
                    HorizontalOptions="Center"/>
             <DatePicker x:Name="startDate"
+                        Date="{Binding StartDate}"
+                        MinimumDate="{Binding MinDate}"
                         HorizontalOptions="Center"
                         WidthRequest="300"/>
             <Label Text="End Date"
                    FontSize="Large"
                    HorizontalOptions="Center"/>
             <DatePicker x:Name="endDate"
+                        Date="{Binding EndDate}"
                         HorizontalOptions="Center"
                         WidthRequest="300"/>
             <Grid ColumnDefinitions="*,*">

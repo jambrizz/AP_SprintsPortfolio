@@ -1,6 +1,10 @@
 ﻿using System;
+using Travel.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Travel.Data;
+using System.IO;
+using SQLite;
 
 namespace Travel.Views
 {
@@ -10,61 +14,100 @@ namespace Travel.Views
 		public Trip ()
 		{
 			InitializeComponent ();
-		}
+            BindingContext = new TravelPlan();
+        }
 
 		private async void SaveTrip(object sender, EventArgs e)
 		{
-			Title = TripName.Text;
-			string StartDate = startDate.Date.ToShortDateString();
-			string EndDate = endDate.Date.ToShortDateString();
+            var trip = (TravelPlan)BindingContext;
 
-			var trip = (Models.TravelPlan)BindingContext;
-			if (!string.IsNullOrEmpty(trip.Title))
-			{
-				//TODO: Add trip to database
-
-                //Models.TravelPlan.AddTravelPlan(trip);
-			}
-			else
-			{
-                await DisplayAlert("Error", "Please enter a title.", "OK");
+            // Check if trip is null
+            if (trip == null)
+            {
+                await DisplayAlert("Alert", "Trip is null", "OK");
+                return;
             }
 
-			await Shell.Current.GoToAsync("..");
+            trip.Title = TripName.Text;
+            trip.StartDate = startDate?.Date ?? DateTime.MinValue; // Null propagation and null coalescing operators used to handle potential null references
+            trip.EndDate = endDate?.Date ?? DateTime.MinValue;
 
-
-            //DatePicker StartDate = startDate;
-			//DatePicker EndDate = endDate;
-            //await DisplayAlert("Success", $"{Title}, {StartDate}, {EndDate}", "OK");
-
-
-			/*
-			var trip = (Models.TravelPlan)BindingContext;
-			if (!string.IsNullOrEmpty(trip.Title))
-			{
-				//Models.TravelPlan.AddTravelPlan(trip);
-				//this.Navigation.PopAsync();
-				await DisplayAlert($"{TripName}");
-				//await App.Database.SaveTravelPlanAsync(trip);
-			}
-			else
-			{
-                await DisplayAlert("Error", "Please enter a title.", "OK");
+            if (!string.IsNullOrWhiteSpace(trip.Title))
+            {
+                if (App.Database != null)
+                {
+                    await App.Database.SaveTravelPlanAsync(trip);
+                }
+                else
+                {
+                    await DisplayAlert("Alert", "Database is null", "OK");
+                }
+            }
+            else
+            {
+                await DisplayAlert("Alert", "Please enter a title", "OK");
             }
 
-			await Shell.Current.GoToAsync("..");
+            await Navigation.PopModalAsync();
+            /*
+            var trip = (TravelPlan)BindingContext;
+            //var trip = new Models.TravelPlan();
+            //trip.ID = id;
+            trip.Title = TripName.Text;
+            trip.StartDate = startDate.Date;
+            trip.EndDate = endDate.Date;
+
+            if (trip != null && !string.IsNullOrWhiteSpace(trip.Title))
+			{
+				if (App.Database != null)
+				{
+					await App.Database.SaveTravelPlanAsync(trip);
+				}
+				else
+				{ 
+					await DisplayAlert("Alert", "Database is null", "OK");
+				}
+            }
+			else
+			{
+                if(trip == null)
+				{
+                    await DisplayAlert("Alert", "Trip is null", "OK");
+                }
+                else
+				{
+                    await DisplayAlert("Alert", "Please enter a title", "OK");
+                }
+            }
+
+			await Navigation.PopModalAsync();
+
 			
-            Models.TravelPlan travelPlan = new Models.TravelPlan()
+			var trip = (TravelPlan)BindingContext;
+			if(!string.IsNullOrWhiteSpace(trip.Title))
 			{
-                Title = TripName.Text,
-                StartDate = StartDate.Date,
-                EndDate = EndDate.Date
-            };
+                await App.Database.SaveTravelPlanAsync(trip);
+            }
 
-            using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.DatabasePath))
+			await Navigation.PopModalAsync();
+			////////////////////////////////////////
+			TravelPlan t = new TravelPlan();
+			int id = t.GetID();
+			
+			var trip = new Models.TravelPlan();
+			trip.ID = id;
+			trip.Title = TripName.Text;
+			trip.StartDate = startDate.Date;
+			trip.EndDate = endDate.Date;
+
+			if (trip.Title == null || trip.Title == "")
 			{
-                conn.CreateTable<Models.TravelPlan>();
-                int rowsAdded = conn.Insert(travelPlan);
+				await DisplayAlert("Alert", "Please enter a title", "OK");
+			}
+			else
+			{
+                await DisplayAlert("Alert", $"{trip.ID}, {trip.Title} {trip.StartDate.ToShortDateString()}, {trip.EndDate.ToShortDateString()}", "OK");
+				//await App.Database.SaveTravelPlanAsync(trip);
             }
 			*/
         }
@@ -74,5 +117,13 @@ namespace Travel.Views
             //await Navigation.PopModalAsync();
 			//await Navigation.PopModalAsync(new Travel.MainPage());
         }
+
+		/*
+		protected override async void OnAppearing()
+		{
+            base.OnAppearing();
+            CollectionView.ItemsSource = await App.Database.GetTravelPlansAsync();
+        }
+		*/
 	}
 }

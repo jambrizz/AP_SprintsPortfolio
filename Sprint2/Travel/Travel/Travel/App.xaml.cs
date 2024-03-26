@@ -2,8 +2,6 @@
 using System.IO;
 using Travel.Data;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Travel.Models;
 
 namespace Travel
 {

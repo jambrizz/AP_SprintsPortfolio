@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using System.Text;
 using SQLite;
+using Xamarin.Forms;
 
 namespace Travel.Models
 {
     public class TravelPlan
     {
         [PrimaryKey, AutoIncrement]
-        public int TravelPlanID { get; set; }
+        public int ID { get; set; }
         public string Title { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-       
-        public async void AddTravelPlan(TravelPlan travelPlan)
+        public int GetID()
         {
-            await App.Database.SaveTravelPlanAsync(travelPlan);
+            return ID;
         }
+
     }
 }
