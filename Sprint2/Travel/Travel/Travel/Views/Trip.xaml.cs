@@ -49,73 +49,12 @@ namespace Travel.Views
             }
 
             await Navigation.PopModalAsync();
-            /*
-            var trip = (TravelPlan)BindingContext;
-            //var trip = new Models.TravelPlan();
-            //trip.ID = id;
-            trip.Title = TripName.Text;
-            trip.StartDate = startDate.Date;
-            trip.EndDate = endDate.Date;
-
-            if (trip != null && !string.IsNullOrWhiteSpace(trip.Title))
-			{
-				if (App.Database != null)
-				{
-					await App.Database.SaveTravelPlanAsync(trip);
-				}
-				else
-				{ 
-					await DisplayAlert("Alert", "Database is null", "OK");
-				}
-            }
-			else
-			{
-                if(trip == null)
-				{
-                    await DisplayAlert("Alert", "Trip is null", "OK");
-                }
-                else
-				{
-                    await DisplayAlert("Alert", "Please enter a title", "OK");
-                }
-            }
-
-			await Navigation.PopModalAsync();
-
-			
-			var trip = (TravelPlan)BindingContext;
-			if(!string.IsNullOrWhiteSpace(trip.Title))
-			{
-                await App.Database.SaveTravelPlanAsync(trip);
-            }
-
-			await Navigation.PopModalAsync();
-			////////////////////////////////////////
-			TravelPlan t = new TravelPlan();
-			int id = t.GetID();
-			
-			var trip = new Models.TravelPlan();
-			trip.ID = id;
-			trip.Title = TripName.Text;
-			trip.StartDate = startDate.Date;
-			trip.EndDate = endDate.Date;
-
-			if (trip.Title == null || trip.Title == "")
-			{
-				await DisplayAlert("Alert", "Please enter a title", "OK");
-			}
-			else
-			{
-                await DisplayAlert("Alert", $"{trip.ID}, {trip.Title} {trip.StartDate.ToShortDateString()}, {trip.EndDate.ToShortDateString()}", "OK");
-				//await App.Database.SaveTravelPlanAsync(trip);
-            }
-			*/
+            
         }
 
 		public void CancelEntry(object sender, EventArgs e)
 		{
-            //await Navigation.PopModalAsync();
-			//await Navigation.PopModalAsync(new Travel.MainPage());
+            
         }
 
 		/*

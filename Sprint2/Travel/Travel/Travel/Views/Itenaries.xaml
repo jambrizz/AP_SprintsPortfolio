@@ -5,12 +5,32 @@
              Title="Load Itenaries">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="List of Itenaries!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Grid>
-                
-            </Grid>
+
+            <CollectionView x:Name="CollectionView"
+                            ItemsSource="{Binding TravelPlan}" 
+                            SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Title}" 
+                                   FontSize="20"
+                                   FontAttributes="Bold"/>
+                            <Button Text="View" 
+                                    CornerRadius="6"
+                                    />
+                            <Button Text="Edit" 
+                                    CornerRadius="6"
+                                    />
+                            <Button Text="Delete"
+                                    CornerRadius="6"
+                                    />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label Text="{Binding Text}"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

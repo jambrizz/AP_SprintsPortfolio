@@ -13,18 +13,15 @@ namespace Travel.Data
     {
         readonly SQLiteAsyncConnection database;
 
+        
+
         public TravelDatabase(string dbPath)
         {
-            /*
-            database = new SQLiteAsyncConnection(dbPath);
-            database.CreateTableAsync<TravelPlan>().Wait(); //This is getting an exception
-            database.CreateTableAsync<ItenaryItem>().Wait();
-            */
             try
             {
                 database = new SQLiteAsyncConnection(dbPath);
                 database.CreateTableAsync<TravelPlan>().Wait();
-                database.CreateTableAsync<ItenaryItem>().Wait();
+                //database.CreateTableAsync<ItenaryItem>().Wait();
             }
             catch (Exception ex)
             {
