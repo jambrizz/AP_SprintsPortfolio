@@ -14,10 +14,5 @@ namespace Travel.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-        public int GetID()
-        {
-            return ID;
-        }
-
     }
 }

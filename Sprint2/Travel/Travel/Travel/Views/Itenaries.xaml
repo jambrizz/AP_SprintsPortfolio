@@ -15,22 +15,21 @@
                             <Label Text="{Binding Title}" 
                                    FontSize="20"
                                    FontAttributes="Bold"/>
-                            <Button Text="View" 
-                                    CornerRadius="6"
-                                    />
-                            <Button Text="Edit" 
-                                    CornerRadius="6"
-                                    />
-                            <Button Text="Delete"
-                                    CornerRadius="6"
-                                    />
+                            <Grid ColumnDefinitions="*,*">
+                                <Button Text="View"
+                                        Grid.Column="0"
+                                        CornerRadius="6"/>
+                                <Button Text="Delete"
+                                        Grid.Column="1"
+                                        CornerRadius="6"
+                                        Clicked="Delete_Clicked"/>
+                            </Grid>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            <Label Text="{Binding Text}"
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand" />
+            <Button Text="Home"
+                    Clicked="Home_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

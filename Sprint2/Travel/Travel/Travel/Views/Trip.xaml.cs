@@ -5,12 +5,14 @@ using Xamarin.Forms.Xaml;
 using Travel.Data;
 using System.IO;
 using SQLite;
+using System.Net.NetworkInformation;
 
 namespace Travel.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Trip : ContentPage
 	{
+        public DateTime MinimumDate { get; set; } = DateTime.Now;
 		public Trip ()
 		{
 			InitializeComponent ();
@@ -51,18 +53,10 @@ namespace Travel.Views
             await Navigation.PopModalAsync();
             
         }
-
-		public void CancelEntry(object sender, EventArgs e)
-		{
-            
+        
+        private async void CancelTrip(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
         }
-
-		/*
-		protected override async void OnAppearing()
-		{
-            base.OnAppearing();
-            CollectionView.ItemsSource = await App.Database.GetTravelPlansAsync();
-        }
-		*/
 	}
 }

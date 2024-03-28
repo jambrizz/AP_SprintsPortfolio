@@ -26,5 +26,19 @@ namespace Travel.Views
             // Get all travel plans
             CollectionView.ItemsSource = await App.Database.GetTravelPlansAsync();
         }
-	}
+
+		async void Delete_Clicked(object sender, EventArgs e)
+		{
+            var button = sender as Button;
+            var travelPlan = button.BindingContext as TravelPlan;
+            await App.Database.DeleteTravelPlanAsync(travelPlan);
+            CollectionView.ItemsSource = await App.Database.GetTravelPlansAsync();
+        }
+
+		private async void Home_Clicked(object sender, EventArgs e)
+		{
+            await Navigation.PopModalAsync();
+        }
+
+    }
 }
