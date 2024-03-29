@@ -31,7 +31,7 @@ namespace Travel.Views
             }
 
             trip.Title = TripName.Text;
-            trip.StartDate = startDate?.Date ?? DateTime.MinValue; // Null propagation and null coalescing operators used to handle potential null references
+            trip.StartDate = startDate?.Date ?? DateTime.MinValue; 
             trip.EndDate = endDate?.Date ?? DateTime.MinValue;
 
             if (!string.IsNullOrWhiteSpace(trip.Title))

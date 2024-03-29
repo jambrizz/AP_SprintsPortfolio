@@ -36,16 +36,6 @@ namespace Travel.Data
             return new SQLiteAsyncConnection(databasePath);
         }
 
-        /*
-         //Not sure if I will need this method.
-        //Will try to use method in TravelDatabase.cs that returns all travel plans first.
-        public Task<List<TravelPlan>> GetTravelPlansAsync()
-        {
-            //Get all travel plans.
-            return database.Table<TravelPlan>().ToListAsync();
-        }
-        */
-
         public Task<List<ItenaryItem>> GetItenaryItemsAsync()
         {
             //Get all itenary items.

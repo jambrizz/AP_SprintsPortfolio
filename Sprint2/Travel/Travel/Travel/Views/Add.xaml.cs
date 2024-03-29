@@ -7,6 +7,8 @@ using Travel.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Travel.Models;
+using System.IO;
+using Xamarin.Essentials;
 
 
 namespace Travel.Views
@@ -19,31 +21,43 @@ namespace Travel.Views
             InitializeComponent();
             BindingContext = new TravelPlan();
             BindingContext = new ItenaryItem();
+
+            
+            var TripListName = new List<string>();
+            foreach (var trip in App.Database.GetTravelPlansAsync().Result)
+            {
+                TripListName.Add(trip.Title);
+            }
+
+            TripPicker.ItemsSource = TripListName;
+            
         }
 
-        /*
         private async void SaveItenary(object sender, EventArgs e)
         {
             var itenary = (ItenaryItem)BindingContext;
-
-            // Check if itenary is null
+            
             if (itenary == null)
             {
                 await DisplayAlert("Alert", "Itenary is null", "OK");
                 return;
             }
 
-            itenary.Title = ItenaryTitle.Text;
-            itenary.Description = ItenaryDescription.Text;
+            itenary.TravelPlanID = App.Database.ReturnTravelPlanID(TripPicker.SelectedItem.ToString());
+            itenary.Title = EventName.Text;
+            itenary.Description = Description.Text;
             itenary.EventDate = EventDate.Date;
             itenary.StartTime = StartTime.Time;
             itenary.EndTime = EndTime.Time;
 
             if (!string.IsNullOrWhiteSpace(itenary.Title))
             {
+                //This is to switch between the two databases for the itenary items.
+                var itenaryDatabase = new ItenaryDatabase(Path.Combine(FileSystem.AppDataDirectory, "ItenaryItems.db3"));
                 if (App.Database != null)
                 {
-                    await App.Database.SaveItenaryItemAsync(itenary);
+                    await itenaryDatabase.SaveItenaryItemAsync(itenary);
+
                 }
                 else
                 {
@@ -54,10 +68,10 @@ namespace Travel.Views
             {
                 await DisplayAlert("Alert", "Please enter a title", "OK");
             }
-
+            
             await Navigation.PopModalAsync();
         }
-        */
+
         private async void CancelItenary(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();

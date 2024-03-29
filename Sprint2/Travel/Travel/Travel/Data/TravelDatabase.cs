@@ -21,7 +21,6 @@ namespace Travel.Data
             {
                 database = new SQLiteAsyncConnection(dbPath);
                 database.CreateTableAsync<TravelPlan>().Wait();
-                //database.CreateTableAsync<ItenaryItem>().Wait();
             }
             catch (Exception ex)
             {
@@ -53,6 +52,19 @@ namespace Travel.Data
             return database.Table<TravelPlan>()
                             .Where(i => i.ID == id)
                             .FirstOrDefaultAsync();
+        }
+
+        public int ReturnTravelPlanID(string title)
+        {
+            int id = 0;
+            var trip = database.Table<TravelPlan>()
+                .Where(i => i.Title == title)
+                .FirstOrDefaultAsync();
+            if (trip != null)
+            {
+                id = trip.Result.ID;
+            }
+            return id;
         }
 
         public Task<int> SaveTravelPlanAsync(TravelPlan travelPlan)

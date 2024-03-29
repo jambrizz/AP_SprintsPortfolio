@@ -27,7 +27,26 @@ namespace Travel.Views
             CollectionView.ItemsSource = await App.Database.GetTravelPlansAsync();
         }
 
-		async void Delete_Clicked(object sender, EventArgs e)
+        async void Retrieve_Itenary(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var travelPlan = button.CommandParameter as TravelPlan;
+
+            if (travelPlan != null)
+            {
+                var title = travelPlan.Title;
+                var travelPlanID = travelPlan.ID;
+                await DisplayAlert("Alert", $"{title} {travelPlanID}", "OK");
+                //TODO: Retrieve Itenary Items
+            }
+            else
+            {
+                await DisplayAlert("Error", "Failed to retrieve TravelPlan.", "OK");
+            }
+        }
+
+
+        async void Delete_Clicked(object sender, EventArgs e)
 		{
             var button = sender as Button;
             var travelPlan = button.BindingContext as TravelPlan;
@@ -38,6 +57,11 @@ namespace Travel.Views
 		private async void Home_Clicked(object sender, EventArgs e)
 		{
             await Navigation.PopModalAsync();
+        }
+
+        private async void AddTravelPlanID()
+        { 
+            
         }
 
     }

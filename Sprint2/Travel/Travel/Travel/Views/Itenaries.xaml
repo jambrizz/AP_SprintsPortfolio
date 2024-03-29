@@ -11,14 +11,17 @@
                             SelectionMode="Single">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="{Binding Title}" 
+                        <StackLayout Orientation="Horizontal"
+                                     BindingContext="{Binding}">
+                            <Label Text="{Binding Title}"
                                    FontSize="20"
                                    FontAttributes="Bold"/>
                             <Grid ColumnDefinitions="*,*">
                                 <Button Text="View"
                                         Grid.Column="0"
-                                        CornerRadius="6"/>
+                                        CornerRadius="6"
+                                        Clicked="Retrieve_Itenary"
+                                        CommandParameter="{Binding .}"/>
                                 <Button Text="Delete"
                                         Grid.Column="1"
                                         CornerRadius="6"

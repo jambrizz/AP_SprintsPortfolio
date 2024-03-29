@@ -10,15 +10,16 @@
                 FontSize="Large"
                 HorizontalOptions="Center"/>
         <Picker x:Name="TripPicker"
-                
+                Title="SelectTrip"
+                ItemsSource="{Binding Trips}"
                 HorizontalOptions="Center"
                 WidthRequest="300"/>
         <Label  Text="Event Name"
                 FontSize="Large"
                 HorizontalOptions="Center"/>
-        <Entry x:Name="EventNameEntry"
+        <Entry x:Name="EventName"
                Placeholder="Enter event name here"
-               Text="{Binding Title}"
+               Text="{Binding EventName}"
                HorizontalOptions="Center"
                WidthRequest="300"/>
         <Label  Text="Description of Event"
@@ -53,7 +54,7 @@
                     WidthRequest="300"/>
         <Grid ColumnDefinitions="*,*">
             <Button Text="Save"
-                    Command="{Binding SaveCommand}"
+                    Clicked="SaveItenary"
                     Grid.Column="0"
                     CornerRadius="20"/>
             <Button Text="Cancel"
