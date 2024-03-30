@@ -60,3 +60,31 @@ This is a simple inventory management system that allows users to add, update, d
 
 [Youtube Video Demonstration](https://youtu.be/GHsohyT3z6M)
 
+***
+### Travel Itinerary App
+This is a simple travel itinerary app that allows the user to create a trip, add itenerary items to the trip, and view the trip details. 
+It is written in xamarin and C#.
+
+| Language | Framework | Platform | Author       |
+| -------- | --------- | -------- | ------------ |
+| C#       | Xamarin   | Mobile   | Jovani Ambriz|
+
+| Date Created | Last Updated |
+| ------------ | ------------ |
+| 2024-03-14   | 2024-03-30   |
+
+|Technologies     |
+|-----------------|
+|Microsoft Copilot|
+|Visual Studio    |
+|Git              |
+|GitHub           |
+
+| Website References |
+| ------------------- |
+| [W3 Schools](https://www.w3schools.com/cs/index.php) |
+| [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/) |
+| [Xamarin](https://dotnet.microsoft.com/apps/xamarin) |
+| [Xamarin Forms](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/) |
+
+[Youtube Video Demonstration](https://youtu.be/Ee7c-nohXII)
