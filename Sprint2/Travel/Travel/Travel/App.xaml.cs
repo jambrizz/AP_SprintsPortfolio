@@ -21,6 +21,8 @@ namespace Travel
             }
         }
 
+        public static object itenaryDatabase { get; internal set; }
+
         public App()
         {
             InitializeComponent();

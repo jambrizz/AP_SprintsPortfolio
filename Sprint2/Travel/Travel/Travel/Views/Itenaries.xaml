@@ -32,7 +32,9 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
             <Button Text="Home"
-                    Clicked="Home_Clicked"/>
+                    Clicked="Home_Clicked"
+                    CornerRadius="20"
+                    Padding="30,10,30,10"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

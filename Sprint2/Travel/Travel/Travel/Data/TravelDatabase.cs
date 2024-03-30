@@ -19,7 +19,9 @@ namespace Travel.Data
         {
             try
             {
+                //Create a new SQLiteAsyncConnection using the path parameter
                 database = new SQLiteAsyncConnection(dbPath);
+                //Create the TravelPlan table
                 database.CreateTableAsync<TravelPlan>().Wait();
             }
             catch (Exception ex)
@@ -40,12 +42,14 @@ namespace Travel.Data
             return new SQLiteAsyncConnection(databasePath);
         }
 
+        //Get all travel plans
         public Task<List<TravelPlan>> GetTravelPlansAsync()
         {
             //Get all travel plans.
             return database.Table<TravelPlan>().ToListAsync();
         }
 
+        //Get a specific travel plan
         public Task<TravelPlan> GetTravelPlanAsync(int id)
         {
             //Get a specific travel plan.
@@ -54,6 +58,7 @@ namespace Travel.Data
                             .FirstOrDefaultAsync();
         }
 
+        //Return the ID of a travel plan
         public int ReturnTravelPlanID(string title)
         {
             int id = 0;
@@ -67,6 +72,7 @@ namespace Travel.Data
             return id;
         }
 
+        //Save a travel plan
         public Task<int> SaveTravelPlanAsync(TravelPlan travelPlan)
         {
             if (travelPlan.ID != 0)
@@ -81,6 +87,7 @@ namespace Travel.Data
             }
         }
 
+        //Delete a travel plan
         public Task<int> DeleteTravelPlanAsync(TravelPlan travelPlan)
         {
             //Delete a travel plan.

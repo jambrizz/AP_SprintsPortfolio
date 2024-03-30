@@ -19,10 +19,12 @@ namespace Travel.Views
         public Add()
         {
             InitializeComponent();
+            //BindingContext = new TravelPlan();
             BindingContext = new TravelPlan();
+            //BindingContext = new ItenaryItem();
             BindingContext = new ItenaryItem();
 
-            
+            //This is to populate the picker with the trip names
             var TripListName = new List<string>();
             foreach (var trip in App.Database.GetTravelPlansAsync().Result)
             {
@@ -33,6 +35,7 @@ namespace Travel.Views
             
         }
 
+        //This is to save the itenary item
         private async void SaveItenary(object sender, EventArgs e)
         {
             var itenary = (ItenaryItem)BindingContext;
@@ -42,7 +45,7 @@ namespace Travel.Views
                 await DisplayAlert("Alert", "Itenary is null", "OK");
                 return;
             }
-
+            //This is to get the travel plan ID from the selected trip name
             itenary.TravelPlanID = App.Database.ReturnTravelPlanID(TripPicker.SelectedItem.ToString());
             itenary.Title = EventName.Text;
             itenary.Description = Description.Text;
@@ -72,6 +75,8 @@ namespace Travel.Views
             await Navigation.PopModalAsync();
         }
 
+        //This is to cancel the itenary item
+        //And return to the previous page
         private async void CancelItenary(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();

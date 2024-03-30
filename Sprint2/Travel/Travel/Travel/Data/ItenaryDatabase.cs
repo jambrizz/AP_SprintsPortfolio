@@ -36,12 +36,14 @@ namespace Travel.Data
             return new SQLiteAsyncConnection(databasePath);
         }
 
+        // Get all itenary items.
         public Task<List<ItenaryItem>> GetItenaryItemsAsync()
         {
             //Get all itenary items.
             return database.Table<ItenaryItem>().ToListAsync();
         }
 
+        // Get all itenary items for a specific trip.
         public Task<List<ItenaryItem>> GetAllItenaryItemsByTrip(int travelPlanID)
         {
             //Get all itenary items for a specific trip.
@@ -50,6 +52,7 @@ namespace Travel.Data
                             .ToListAsync();
         }
 
+        // Get a specific itenary item based on the ID.
         public Task<ItenaryItem> GetItenaryItemAsync(int id)
         {
             //Get a specific itenary item.
@@ -58,6 +61,7 @@ namespace Travel.Data
                             .FirstOrDefaultAsync();
         }
 
+        // Save an itenary item.
         public Task<int> SaveItenaryItemAsync(ItenaryItem itenaryItem)
         {
             if (itenaryItem.ID != 0)
@@ -72,6 +76,7 @@ namespace Travel.Data
             }
         }
 
+        // Delete an itenary item.
         public Task<int> DeleteItenaryItemAsync(ItenaryItem itenaryItem)
         {
             // Delete an itenary item.

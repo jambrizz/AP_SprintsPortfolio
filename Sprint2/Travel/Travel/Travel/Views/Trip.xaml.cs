@@ -12,13 +12,16 @@ namespace Travel.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Trip : ContentPage
 	{
+        //This field is used to set the minimum date for the date picker.
         public DateTime MinimumDate { get; set; } = DateTime.Now;
 		public Trip ()
 		{
 			InitializeComponent ();
+            //Set the binding context to a new TravelPlan object.
             BindingContext = new TravelPlan();
         }
 
+        //This is method is to save the trip details.
 		private async void SaveTrip(object sender, EventArgs e)
 		{
             var trip = (TravelPlan)BindingContext;
@@ -54,6 +57,7 @@ namespace Travel.Views
             
         }
         
+        //This method is to cancel the trip creation.
         private async void CancelTrip(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
