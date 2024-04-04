@@ -14,6 +14,10 @@ class Calculator {
 
 
             println("You entered: $input")
+            val equation = seperateInput(input!!)
+            for(i in equation) {
+                println("Equation: $i")
+            }
             print("> ")
             input = readLine()
 
@@ -27,12 +31,25 @@ class Calculator {
         }
     }
 
+    // Function to seperate the input into numbers and operator
     fun seperateInput(input: String): List<String> {
-        val stringEquation = input
+        var blankSpace = 0
+        val lenOfInput = input.length
+        println("Lenght of input: $lenOfInput")
+        for(i in 0 until lenOfInput) {
+            //println("Index: $i")
+            //println("Char: ${input[i]}")
+            if(input[i] == ' ') {
+                blankSpace ++
+            }
+        }
 
+        return if(blankSpace > 0){
+            input.split("").filter{it.isNotBlank()}
+        } else{
+            input.map{it.toString()}
+        }
 
-
-        return input.split(" ")
     }
 }
 
