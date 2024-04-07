@@ -12,22 +12,17 @@ class Calculator {
         var runProgram = true
         while (runProgram == true) {
 
-
-            //println("You entered: $input")
-            val equation = seperateInput(input!!)
-
-            val getSolution = Solution()
-            getSolution.sortSolution(equation)
-
-            print("> ")
-            input = readLine()
-
             if (input == "exit") {
                 runProgram = false
                 println("Exiting Calculator, Thank you for using it!")
-            }
-            else {
-                //TODO: Call the function to seperateInput to get the numbers and the operator
+            } else{
+                val equation = seperateInput(input!!)
+
+                val getSolution = Solution()
+                getSolution.sortSolution(equation)
+
+                print("> ")
+                input = readLine()
             }
         }
     }
@@ -54,7 +49,5 @@ class Calculator {
         }
 
         return items
-
     }
 }
-
