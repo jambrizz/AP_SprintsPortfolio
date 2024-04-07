@@ -88,3 +88,32 @@ It is written in xamarin and C#.
 | [Xamarin Forms](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/) |
 
 [Youtube Video Demonstration](https://youtu.be/Ee7c-nohXII)
+***
+### Basic Calculator
+This is a simple calculator app that allows the user to perform basic arithmetic operations such as addition, subtraction, multiplication, and division using the programming language Kotlin.
+
+The reason I chose to create this project is to demonstrate my ability to create a simple app using Kotlin and Intellij IDEA to develop the software.
+
+[Youtube Video Demonstration](https://youtu.be/8E19hVG4AO8)
+
+## Development Environment
+|Tools |Description|
+|------|-----------|
+|IntelliJ IDEA|IDE for Kotlin development|
+|Git|Version control system|
+|GitHub|Hosting service for Git repositories|
+|GitHub Copilot|AI pair programmer|
+
+|Programming Languages |Description|
+|----------------------|-----------|
+|Kotlin|Programming language used to develop the calculator app|
+
+## Useful Websites
+- [Kotlin Programming Language](https://kotlinlang.org/)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+- [Codecademy resources Kotlin](https://www.codecademy.com/resources/docs/kotlin)
+
+## Future Work
+- Add more functionality to the calculator app such using pemdas to support more complex equations square roots.
+- Add a history feature to the calculator app.
+
